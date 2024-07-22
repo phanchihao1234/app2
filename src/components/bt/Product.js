@@ -2,8 +2,8 @@ import React from 'react'
 import { Card, CardBody, CardLink, CardText, CardTitle, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import "./product.css"
 
-export default function Product(prop) {
-    const { pro } = prop
+export default function Product(props) {
+    const { pro } = props
     return (
         <>
             <Col lg={3} md={4} sm={6} xs={6} style={{

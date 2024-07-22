@@ -224,9 +224,12 @@ export default function Bt() {
         },
     ])
     const handle_list = (value) => {
-        console.log(listTour.filter(item => item.category == value))
-        setList(listTour.filter(item => item.category == value))
+        setContryDefault(value)
+        console.log(listTour.filter(item => item.category === value))
+        setList(listTour.filter((item) => item.category == value))
     }
+    const [contryDefault, setContryDefault] = useState("New York")
+    const contry = [{ a: "New York" }, { a: "London" }, { a: "Tokyo" }, { a: "Los Angeles" }]
     return (
         <>
             <Container style={{
@@ -236,10 +239,11 @@ export default function Bt() {
                 <h2>Trending destinations</h2>
             </Container>
             <div className='btn'>
-                <Button className='ms-5 button active' onClick={() => handle_list("New York")}>New York</Button>
-                <Button className='ms-5 button' onClick={() => handle_list("London")}>London</Button>
-                <Button className='ms-5 button' onClick={() => handle_list("Tokyo")}>Tokyo</Button>
-                <Button className='ms-5 button' onClick={() => handle_list("Los Angeles")}>Los Angeles</Button>
+                {
+                    contry.map((item, index) => (<Button key={index} className={`ms-5 button ${contryDefault === item.a ? "active" : ""
+                        }`} onClick={() => handle_list(item.a)}>{item.a}</Button>))
+                }
+
             </div>
             <Container >
                 <Row >
