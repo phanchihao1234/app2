@@ -1,0 +1,13 @@
+.tag {
+    width: 55px;
+    height: 28px;
+    background: #dc3545;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #fff;
+    font-size: large;
+}
